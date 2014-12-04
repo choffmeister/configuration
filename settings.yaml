@@ -1,0 +1,13 @@
+tasks:
+  - path: ~/.gitconfig
+    source: gitconfig
+    mode: link
+  - path: ~/.gitignore_global
+    source: gitignore_global
+    mode: link
+  - path: ~/.ssh
+    mode: mkdir
+    chmod: 700
+  - path: ~/.ssh/config
+    source: ssh_config
+    mode: link

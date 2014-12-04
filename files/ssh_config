@@ -1,0 +1,47 @@
+Host choffmeister.de
+    HostName choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host server.home.choffmeister.de
+    HostName server.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host gateway.home.choffmeister.de
+    HostName gateway.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host vpn.home.choffmeister.de
+    HostName vpn.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host owncloud.home.choffmeister.de
+    HostName owncloud.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host mysql.home.choffmeister.de
+    HostName mysql.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host plex.home.choffmeister.de
+    HostName plex.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host download.home.choffmeister.de
+    HostName download.home.choffmeister.de
+    Port 22
+    User root
+    IdentityFile ~/.ssh/id_rsa

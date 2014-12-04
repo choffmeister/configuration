@@ -1,0 +1,38 @@
+#!/usr/bin/python
+
+import os
+import yaml
+
+current_dir = os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(current_dir, 'settings.yaml'), 'r') as f: settings = yaml.load(f)
+
+def targetpath(path):
+  return os.path.realpath(os.path.expanduser(path))
+
+def sourcepath(path):
+  global current_dir
+  return os.path.realpath(os.path.join(current_dir, 'files', path))
+
+def mkdir(task):
+  path = targetpath(task['path'])
+  print 'mkdir %s' % (path)
+  if not os.path.exists(path): os.makedirs(path)
+  chmod(task)
+
+def link(task):
+  path = targetpath(task['path'])
+  source = sourcepath(task['source'])
+  print 'link %s -> %s' % (path, source)
+  if not os.path.exists(path): os.symlink(source, path)
+  chmod(task)
+
+def chmod(task):
+  path = targetpath(task['path'])
+  print 'chmod %s' % (path)
+  if 'chmod' in task.keys():
+    os.chmod(path, int(str(task['chmod']), 8))
+
+for task in settings['tasks']:
+  if task['mode'] == 'mkdir': mkdir(task)
+  elif task['mode'] == 'link': link(task)
+  else: print 'unknown task mode %s' % task['mode']
