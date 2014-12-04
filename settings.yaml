@@ -5,6 +5,13 @@ tasks:
   - path: ~/.gitignore_global
     source: gitignore_global
     mode: link
+  - path: ~/.vimrc
+    source: vimrc
+    mode: link
+  - path: ~/.bashrc
+    source: bashrc
+    mode: link
+
   - path: ~/.ssh
     mode: mkdir
     chmod: 700
